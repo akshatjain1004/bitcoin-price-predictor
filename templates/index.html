@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .bg{
+                background-image: url("static/bg.webp");
+                height: 620px;
+                position: relative;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .credit {
+                padding: 1rem;
+                padding-top: 2rem;
+                margin-top: 2rem;
+                text-align: center;
+                font-size: 2rem;
+                color: var(--light-color);
+                border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+              }
+            .credit span {
+                color: var(--green);
+              }
+        </style>
+        <title>Bitcoin Price Predictor</title>
+    </head>
+
+    <body class="bg">
+        <nav class="navbar navbar-dark bg-opacity-100">
+            <div class="container-fluid">
+                <a class="navbar-brand mx-7" href="/">
+                    <img src="static/bit.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    Bitcoin Price Predictor
+                </a>
+            </div>
+        </nav>
+
+        
+        <!-- <form action='/predict' method="POST" class="col s12">
+             <h1>Add your To-do's</h1> -->
+        <!-- <div class="mb-3">
+                <label for="title" class="form-label">Enter Date</label>
+                <input type="text" class="form-control" id="title" placeholder="Jan 15, 2020">
+            </div> -->
+        <!-- <div class="mb-3">
+                    <label for="description" class="form-label">Describe your Task</label>
+                    <textarea class="form-control" id="description" rows="3"></textarea>
+                </div> -->
+        <!-- <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Check me
+                    </label>
+                </div> -->
+        <!-- <a class="btn btn-primary my-3" href="#" role="button" type="submit">Submit</a> -->
+        <!-- <div class="row center">
+
+                <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+            </div> -->
+        <!-- </form> -->
+        
+            <div class="container my-3">
+                <div class="row center">
+                    <div class="col">
+                        <form action='/open' method="POST" class="row center my3">
+                            <div class="card" style="width: 18rem;">
+                                <img src="static/bit1.jpg" class="card-img-top my-3" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Predict Open Price</h5>
+                                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    <div class="container my-3">
+                                        <div class="input-field col s4">
+                                            <label for="first_name"><b>Date</b></label>
+                                            <br>
+                                            <input id="first_name" name='Date' type="text" class="validate"
+                                                placeholder=" dd-mm-yyyy">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="container my-3">
+
+                                        <button type="submit" class="btn btn-warning">Predict Open Price</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <form action='/close' method="POST" class="row center my3">
+                            <div class="card" style="width: 18rem;">
+                                <img src="static/bit2.jpg" class="card-img-top my-3" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Predict Closing Price</h5>
+                                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    <div class="container my-3">
+                                        <div class="input-field col s4">
+                                            <label for="first_name"><b>Date</b></label>
+                                            <br>
+                                            <input id="first_name" name='Date' type="text" class="validate"
+                                                placeholder=" dd-mm-yyyy">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="container my-3">
+
+                                        <button type="submit" class="btn btn-warning">Predict Closing Price</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <form action='/volume' method="POST" class="row center my3">
+                            <div class="card" style="width: 18rem;">
+                                <img src="static/bit3.jpg" class="card-img-top my-3" alt="..." width="262"
+                                    height="147.2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Predict Market Volume</h5>
+                                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    <div class="container my-3">
+                                        <div class="input-field col s4">
+                                            <label for="first_name"><b>Date</b></label>
+                                            <br>
+                                            <input id="first_name" name='Date' type="text" class="validate"
+                                                placeholder=" dd-mm-yyyy">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="container my-3">
+
+                                        <button type="submit" class="btn btn-warning">Predict Volume </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="credit text-white"> created by <span>Akshat Jain</span> | all rights reserved </div>
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    </body>
+
+</html>
